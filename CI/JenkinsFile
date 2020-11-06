@@ -25,7 +25,7 @@ pipeline {
             ls
             export PATH=/home/pjcalvov/jmeter/apache-jmeter-5.3/bin:$PATH
             cd carga
-            jmeter -n -t Test Plan Examen Modulo 3.jmx
+            jmeter -n -t TestPlanExamenModulo3.jmx
             '''
         }
       }
