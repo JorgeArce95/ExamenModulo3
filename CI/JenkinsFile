@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    stages{
+    stage('Newman Tests API') {
+        steps {
+            sh '''
+            cd API/newman
+            newman run ExamenJorgeArce.postman_collection.json 
+            '''
+              }
+     }
+
+      stage('Rest') {
+      steps {
+          sh '''
+          cd API/Rest
+          mvn clean test
+          '''
+            } 
+            
+      }
+       stage('JMeter Tests') {
+        steps {
+            sh '''
+            ls
+            export PATH=/home/pjcalvov/jmeter/apache-jmeter-5.3/bin:$PATH
+            cd carga
+            jmeter -n -t Test Plan Examen Modulo 3.jmx
+            '''
+        }
+      }
+     
+
+    }
+  }
+
+
+
+    

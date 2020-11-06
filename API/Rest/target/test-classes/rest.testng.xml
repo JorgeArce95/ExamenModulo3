@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Examen" verbose="1" >
+    <parameter name="baseUrl" value="https://api-coffee-testing.herokuapp.com"></parameter>
+    <test name="Regression" >
+        <classes>
+            <class name="nonAPITest" />
+            <class name="UserTests" />
+        </classes>
+    </test>
+</suite>
