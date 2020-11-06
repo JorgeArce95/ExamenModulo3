@@ -33,6 +33,7 @@ public class UserTests extends BaseTest {
         .then()
                 .statusCode(406)
                 .body("message",equalTo("Name was not provided"));
+                //Jorge
     }
 
 
